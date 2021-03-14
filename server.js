@@ -11,8 +11,11 @@ app.use(express.json())
 app.use(express.static(path.join(__dirname, "public")))
 
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", {
-  useNewUrlParser: true,
-}).then(() => console.log("Database is Connected"))
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+    useFindAndModify: false
+  }).then(() => console.log("Database is Connected"))
   .catch(err => console.log(err))
 
  app.use(require("./routes/api-routes.js"))
