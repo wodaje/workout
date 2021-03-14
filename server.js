@@ -16,8 +16,8 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", {
 }).then(() => console.log("Database is Connected"))
   .catch(err => console.log(err))
 
-require("./routes/api-routes.js")(app)
-require("./routes/html-routes.js")(app)
+// require("./routes/api-routes.js")(app)
+// require("./routes/html-routes.js")(app)
 
 app.listen(PORT, () => {
   console.log(`
